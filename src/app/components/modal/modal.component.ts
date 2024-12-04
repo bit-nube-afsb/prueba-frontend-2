@@ -10,7 +10,7 @@ import { Department } from '../../models/department.model';
   styleUrl: './modal.component.css'
 })
 export class ModalComponent {
-  @Input() mode : ModalTypes.DEPARTMENT | ModalTypes.EMPLOYEE = ModalTypes.DEPARTMENT;
+  @Input() mode : "department" | "employee" = "department";
   @Output() close = new EventEmitter<void>();
   department : Department ={
     codigo: 0,
@@ -27,11 +27,11 @@ export class ModalComponent {
 
 
   save() {
-    if(this.mode == ModalTypes.DEPARTMENT){
+    if(this.mode == "department"){
       // Simulando hacer el llamado al backend
       console.log("Se guardó el departamento");
       
-    } else if(this.mode == ModalTypes.EMPLOYEE ){
+    } else if(this.mode == "employee" ){
       console.log("Se guardó el empleado");
       
     }
