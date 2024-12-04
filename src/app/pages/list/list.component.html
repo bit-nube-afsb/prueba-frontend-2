@@ -1,1 +1,12 @@
-<p>list works!</p>
+<h1 class="text-2xl text-blue-600">Listado</h1>
+
+
+<button (click)="openModal('department')"> Crear departamento</button>
+<button (click)="openModal('employee')"> Crear empleado</button>
+
+<app-modal
+    *ngIf="modalIsOpen"
+    (close)="closeModal()"
+>
+
+</app-modal>
